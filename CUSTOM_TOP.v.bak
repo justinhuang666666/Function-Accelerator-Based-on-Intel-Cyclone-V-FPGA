@@ -1,0 +1,41 @@
+module CUSTOM_TOP
+(
+	aclr,
+	clk_en,
+	clock,
+	dataa,
+	datab,
+	N;
+	result);
+
+	input	  aclr;
+	input	  clk_en;
+	input	  clock;
+	input	[31:0]  dataa;
+	input	[31:0]  datab;
+	input [7:0]	  N;
+	output	[31:0]  result;
+	
+	wire [31:0] result_sub;
+	wire [31:0] result_mult;
+
+	MOD_FP_SUB	sub (
+				.aclr (aclr),
+				.clk_en (clk_en),
+				.clock (clock),
+				.dataa (dataa),
+				.datab (datab),
+				.result (result_sub));
+	MOD_FP_MULT  mult(
+				.aclr (aclr),
+				.clk_en (clk_en),
+				.clock (clock),
+				.dataa (dataa),
+				.datab (datab),
+				.result (result_mult));
+				
+	always@(*) begin
+		
+	end
+
+endmodule
