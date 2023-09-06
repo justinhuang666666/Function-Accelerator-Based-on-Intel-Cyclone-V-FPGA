@@ -21,10 +21,11 @@ As shown in figure 6, the module which is responsible for pipeline control is CU
 <p align="center">
 <img width="379" alt="Screenshot 2023-09-07 at 00 42 33" src="https://github.com/justinhuang666666/Function-Accelerator-Based-on-Intel-Cyclone-V-FPGA/assets/106251510/7cd6297c-cb59-4f40-bf8a-6ac8aba4e77c">
 </p>
-**Tree Structured adders**
+
+** Tree Structured adders **
 This part is mainly used to calculate the total sum. Since after the last value gets into the last recursive adder, we need to wait 8 cycles such that all the partial sums are calculated by this adder, and we need to add these 8 values together, so now this adder can be considered as a kind of FIFO, each cycle, one value would pomp out, and we need to store the first out values for the final sum. That’s why the output of this adder is sent to 7 sets of ‘shift registers’, these sets will be delayed by 7 cycles, 6 cycles, 5 cycles, 4 cycles, 3 cycles, 2 cycles, 1 cycle, respectively. Seven outputs of this shift structure together with the direct connection of output of that recursive adder will be sent to the tree structured adders, such kind of structure should be the fastest but requires more resources. So, for the pipelined version, the result would be valid by 76 cycles after the last valid input comes in.
 <p align="center">
-![FPGA2](https://github.com/justinhuang666666/Function-Accelerator-Based-on-Intel-Cyclone-V-FPGA/assets/106251510/743ccd77-d865-4dc5-bbb6-df724d61485e)
+<img width="538" alt="Screenshot 2023-09-07 at 00 52 44" src="https://github.com/justinhuang666666/Function-Accelerator-Based-on-Intel-Cyclone-V-FPGA/assets/106251510/40c3eeda-c88f-482a-bab1-5f87d688acb0">
 </p>
 
 
