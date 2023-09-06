@@ -6,6 +6,7 @@ This project is a semaster long project for Digital System Design.
 * ip - contains the verilog source code of customized hardwares such as CORDIC, Processing Element (PE) etc
 * software - contains the source code of application to test the system performance
 
+# Project Description
 The system design will target a Field-Programmable Gate Array (FPGA) from Intel called Cyclone V DE1-SoC. The target CPU is the soft-processor NIOS II, also provided by Intel. More information about NIOS II can be found here: https://www.intel.co.uk/content/www/uk/en/products/programmable/processor/nios-ii.html
 
 <p align="center">
