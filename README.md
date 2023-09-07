@@ -1,7 +1,7 @@
 # Function Accelerator Based on Intel Cyclone V FPGA
 This project is a semaster long project for Digital System Design. 
 # Directory Structure
-* first_nios2_system11 - contain the final on board version of the design
+* first_nios2_system11 - contain the final on board version of the NiosII processor
 * doc - contains all the report written to present performance analysis of various configuration and tradeoffs between FPGA resources, latency and application size
 * ip - contains the verilog source code of customized hardwares such as CORDIC, Processing Element (PE) etc
 * software - contains the source code of application to test the system performance
